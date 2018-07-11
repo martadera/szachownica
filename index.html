@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Szachownica</title>
+</head>
+
+<style>
+    .container {
+        height: 100%;
+        margin: 20px auto;
+        background-color: floralwhite;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    div {
+        width: 100px;
+        height: 100px;
+        / *display: inline-block;
+        */
+    }
+    /*
+   div:nth-child(2n) {
+       background-color: black;
+   }
+   div:nth-child(2n+1) {
+       background-color: white;
+   }
+*/
+
+</style>
+
+
+
+<body>
+    <section class='container'>
+    </section>
+    <script>
+        const container = document.querySelector('.container');
+        let bok = parseInt(prompt('Podaj liczbę'));
+        console.log(bok);
+        for (let i = 0; i < bok; i++) {
+            container.style.width = (100 * bok) + 'px';
+            container.style.border = "2px solid black";
+            for (let j = 0; j < bok; j++) {
+                let div2 = document.createElement("div");
+                container.appendChild(div2);
+                if ((i + j) % 2 === 0) {
+                    div2.style.backgroundColor = "black";
+                } else {
+                    div2.style.backgroundColor = "white";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
